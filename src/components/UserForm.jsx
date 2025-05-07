@@ -93,6 +93,39 @@ function Form({ name, email, setName, setEmail, company, setCompany }) {
     </div>
   );
 }
+
+function AnotherFunction({ list }) {
+  return (
+    <ul className="bg-white text-black flex flex-col items-center justify-center">
+      {list.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+function UserList({ list, setList }) {
+  return (
+    <div className="w-96 border-2 border-gray-300 rounded-md bg-white text-black flex flex-col items-center justify-center">
+      <ul>
+        {list.map((item, index) => (
+          <li
+            key={index}
+            className="flex items-center gap-4 bg-gray-100 px-2 py-1 rounded-md "
+          >
+            <span className="text-2xl font-bold px-2">{item}</span>
+            <button
+              className="bg-gray-300 border-gray-300 rounded-md px-4 py-2"
+              onClick={() => setList((prev) => prev.filter((x) => x !== item))}
+            >
+              Delete User
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 export default function UserForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -100,9 +133,14 @@ export default function UserForm() {
     name: "Google",
     address: "123 Main St",
   });
+  const [list, setList] = useState(["Apple", "Google", "Microsoft"]);
   return (
     <div>
       <Form {...{ name, email, setName, setEmail, company, setCompany }} />
+      <div className="flex items-center justify-center">
+        <UserList {...{ list, setList }} />
+      </div>
+      <AnotherFunction {...{ list }} />
     </div>
   );
 }
