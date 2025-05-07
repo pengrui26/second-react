@@ -12,6 +12,7 @@ import MainLayout from "@/layouts/MainLayout.jsx";
 import SatoshiLayout from "@/layouts/SatoshiLayout.jsx";
 import Secret from "@/routes/Secret.jsx";
 import Effect from "@/routes/Effect.jsx";
+import Hook from "@/routes/Hook.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
         element: (
           <div className="flex items-center justify-center">
             <Effect />
+          </div>
+        ),
+      },
+      {
+        path: "/hook",
+        element: (
+          <div className="flex items-center justify-center">
+            <Hook />
           </div>
         ),
       },
