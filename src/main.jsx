@@ -11,6 +11,7 @@ import NotFound from "@/routes/NotFound.jsx";
 import MainLayout from "@/layouts/MainLayout.jsx";
 import SatoshiLayout from "@/layouts/SatoshiLayout.jsx";
 import Secret from "@/routes/Secret.jsx";
+import Effect from "@/routes/Effect.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "/secret",
         element: <Secret />,
+      },
+      {
+        path: "/effect",
+        element: (
+          <div className="flex items-center justify-center">
+            <Effect />
+          </div>
+        ),
       },
     ],
   },
