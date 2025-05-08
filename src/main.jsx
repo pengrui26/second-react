@@ -13,6 +13,7 @@ import SatoshiLayout from "@/layouts/SatoshiLayout.jsx";
 import Secret from "@/routes/Secret.jsx";
 import Effect from "@/routes/Effect.jsx";
 import Hook from "@/routes/Hook.jsx";
+import UserContext from "@/contexts/userContext.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -64,6 +65,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserContext.Provider value={{ name: "John", age: 20 }}>
+      <RouterProvider router={router} />
+    </UserContext.Provider>
   </React.StrictMode>
 );

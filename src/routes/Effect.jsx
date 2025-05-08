@@ -18,6 +18,7 @@
 //   );
 // }
 import { useState, useEffect } from "react";
+import Ham from "components/Ham";
 export default function Effect() {
   const [name, setName] = useState("John");
   const [data, setData] = useState(null);
@@ -34,6 +35,7 @@ export default function Effect() {
   return (
     <div className="py-4 px-2 border-2 border-blue-500 rounded-md shadow-md bg-white text-black flex flex-col items-center justify-center">
       <p>Effect</p>
+      <Ham />
       <div>
         {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : "Loading..."}
       </div>

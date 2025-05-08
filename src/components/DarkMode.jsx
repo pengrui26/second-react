@@ -1,9 +1,11 @@
+"use client";
 import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
+import { useLocalStorage } from "react-use";
 
 export default function DarkMode() {
-  const [dark, setDark] = useState(false);
-
+  const [dark, setDark] = useState(true);
+  const [value, setValue, remove] = useLocalStorage("darkmode", false);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const root = window.document.documentElement;
@@ -12,6 +14,7 @@ export default function DarkMode() {
       } else {
         root.classList.remove("dark");
       }
+      setValue(dark);
     }
   }, [dark]);
 
