@@ -65,7 +65,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <UserContext.Provider value={{ name: "John", age: 20 }}>
+    <UserContext.Provider
+      value={{ hello: "Hello from main.jsx", name: "John", age: 20 }}
+    >
       <RouterProvider router={router} />
     </UserContext.Provider>
   </React.StrictMode>

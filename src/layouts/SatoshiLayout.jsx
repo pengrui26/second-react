@@ -3,11 +3,11 @@ import "@/satoshi.css";
 import Effect from "@/routes/Effect";
 import Hook from "@/routes/Hook";
 import DarkMode from "@/components/DarkMode";
+import Ham from "@/components/Ham";
 export default function SatoshiLayout() {
   return (
     <>
       <div className="satoshi-font flex items-center ">
-        <header>This is Satoshi Layout</header>
         <Link to="/secret" className="link-button">
           Go to secret
         </Link>
@@ -24,6 +24,7 @@ export default function SatoshiLayout() {
           <DarkMode />
         </div>
       </div>
+      <Ham />
       <Outlet />
       <footer>This is Satoshi Layout</footer>
     </>

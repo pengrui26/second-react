@@ -1,7 +1,10 @@
 import Hero from "components/Hero.jsx";
-import { useState } from "react";
-
+import { useState, useContext } from "react";
+import UserContext from "@/contexts/userContext.jsx";
 export default function Home() {
+  const value = useContext(UserContext);
+
+  console.log(value);
   const [name, setName] = useState("John");
   return (
     <div className="w-full flex flex-col items-center justify-center bg-blue-500">
@@ -14,6 +17,7 @@ export default function Home() {
       >
         Change Name
       </button>
+      <p className="text-white text-2xl font-bold">{value.hello}</p>
     </div>
   );
 }
