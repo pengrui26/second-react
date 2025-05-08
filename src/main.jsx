@@ -14,6 +14,7 @@ import Secret from "@/routes/Secret.jsx";
 import Effect from "@/routes/Effect.jsx";
 import Hook from "@/routes/Hook.jsx";
 import UserContext from "@/contexts/userContext.jsx";
+import { AppWrapper } from "@/contexts/secondContext.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -65,10 +66,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <UserContext.Provider
-      value={{ hello: "Hello from main.jsx", name: "John", age: 20 }}
-    >
+    <AppWrapper>
       <RouterProvider router={router} />
-    </UserContext.Provider>
+    </AppWrapper>
   </React.StrictMode>
 );
