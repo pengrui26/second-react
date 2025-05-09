@@ -4,6 +4,8 @@ import Effect from "@/routes/Effect";
 import Hook from "@/routes/Hook";
 import DarkMode from "@/components/DarkMode";
 import Ham from "@/components/Ham";
+import Stores from "@/routes/Stores";
+import Search from "@/routes/Search";
 export default function SatoshiLayout() {
   return (
     <>
@@ -20,13 +22,21 @@ export default function SatoshiLayout() {
         <Link to="/hook" className="link-button">
           Go to Hook
         </Link>
+        <Link to="/stores" className="link-button">
+          Go to Stores
+        </Link>
+        <Link to="/search" className="link-button">
+          Go to Search
+        </Link>
         <div className="ml-auto pt-0.5">
           <DarkMode />
         </div>
       </div>
       <Ham />
       <Outlet />
-      <footer>This is Satoshi Layout</footer>
+      <footer className="fixed bottom-0 w-full flex justify-center">
+        This is Satoshi Layout
+      </footer>
     </>
   );
 }

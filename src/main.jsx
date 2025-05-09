@@ -15,6 +15,8 @@ import Effect from "@/routes/Effect.jsx";
 import Hook from "@/routes/Hook.jsx";
 import UserContext from "@/contexts/userContext.jsx";
 import { AppWrapper } from "@/contexts/secondContext.jsx";
+import Stores from "@/routes/Stores.jsx";
+import Search from "@/routes/Search.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +43,22 @@ const router = createBrowserRouter([
         element: (
           <div className="flex items-center justify-center">
             <Hook />
+          </div>
+        ),
+      },
+      {
+        path: "/stores",
+        element: (
+          <div className="flex items-center justify-center">
+            <Stores />
+          </div>
+        ),
+      },
+      {
+        path: "/search",
+        element: (
+          <div className="flex items-center justify-center">
+            <Search />
           </div>
         ),
       },
