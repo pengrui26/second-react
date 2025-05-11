@@ -29,6 +29,9 @@ export default function SatoshiLayout() {
         <Link to="/fetch" className="link-button">
           Go to Fetch
         </Link>
+        <Link to="/axios" className="link-button">
+          Go to Axios
+        </Link>
         <div className="ml-auto pt-0.5">
           <DarkMode />
         </div>
