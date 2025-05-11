@@ -1,17 +1,29 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import instance from "../api/axios";
 export default function Axios() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  // Verison 1
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "https://jsonplaceholder.typicode.com/users"
+  //       );
+  //       setData(response.data);
+  //     } catch (error) {
+  //       setError(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
+  // Verison 2
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
-      );
+      const response = await instance.get("/users");
       setData(response.data);
-      console.log(response.data);
     } catch (error) {
       setError(error);
     } finally {
