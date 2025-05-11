@@ -19,6 +19,9 @@ import Stores from "@/routes/Stores.jsx";
 import Search from "@/routes/Search.jsx";
 import Fetch from "@/routes/Fetch.jsx";
 import Axios from "@/routes/Axios.jsx";
+import ServerComponent from "@/components/ServerComponent.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import PostComponent from "@/components/PostComponent.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -80,6 +83,14 @@ const router = createBrowserRouter([
           </div>
         ),
       },
+      {
+        path: "/server",
+        element: <ServerComponent />,
+      },
+      {
+        path: "/post",
+        element: <PostComponent />,
+      },
     ],
   },
   {
@@ -100,10 +111,14 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AppWrapper>
-      <RouterProvider router={router} />
-    </AppWrapper>
+    <QueryClientProvider client={queryClient}>
+      <AppWrapper>
+        <RouterProvider router={router} />
+      </AppWrapper>
+    </QueryClientProvider>
   </React.StrictMode>
 );
