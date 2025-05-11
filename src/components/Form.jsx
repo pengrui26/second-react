@@ -6,8 +6,8 @@ const Form = ({
   email,
   setName,
   setEmail,
-  error,
-  setError,
+  //   error,
+  //   setError,
   handleSubmit,
 }) => {
   return (

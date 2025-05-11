@@ -17,6 +17,7 @@ import UserContext from "@/contexts/userContext.jsx";
 import { AppWrapper } from "@/contexts/secondContext.jsx";
 import Stores from "@/routes/Stores.jsx";
 import Search from "@/routes/Search.jsx";
+import Fetch from "@/routes/Fetch.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,6 +60,14 @@ const router = createBrowserRouter([
         element: (
           <div className="flex items-center justify-center">
             <Search />
+          </div>
+        ),
+      },
+      {
+        path: "/fetch",
+        element: (
+          <div className="flex items-center justify-center">
+            <Fetch />
           </div>
         ),
       },

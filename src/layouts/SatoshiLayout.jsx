@@ -1,11 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
 import "@/satoshi.css";
-import Effect from "@/routes/Effect";
-import Hook from "@/routes/Hook";
+
 import DarkMode from "@/components/DarkMode";
 import Ham from "@/components/Ham";
-import Stores from "@/routes/Stores";
-import Search from "@/routes/Search";
+
 export default function SatoshiLayout() {
   return (
     <>
@@ -27,6 +25,9 @@ export default function SatoshiLayout() {
         </Link>
         <Link to="/search" className="link-button">
           Go to Search
+        </Link>
+        <Link to="/fetch" className="link-button">
+          Go to Fetch
         </Link>
         <div className="ml-auto pt-0.5">
           <DarkMode />
